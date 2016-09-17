@@ -41,7 +41,7 @@ ORDER BY c DESC;
 
 
 --total credits
-SELECT  `name`, SUM(credits) FROM takes NATURAL JOIN course NATURAL JOIN student WHERE (grade != NULL OR grade !="F")   GROUP BY ID;
+SELECT  `name`, SUM(credits) FROM takes NATURAL JOIN course NATURAL JOIN student WHERE (grade is not NULL and grade !="F")   GROUP BY ID;
 -- Zhang	6
 -- Shankar	10
 -- Brandt	2
